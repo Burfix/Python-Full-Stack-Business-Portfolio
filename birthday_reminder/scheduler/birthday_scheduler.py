@@ -163,12 +163,10 @@ class BirthdayReminder:
         
         for emp in employees:
             try:
-                bday = datetime.strptime(emp["birthday"], "%Y-%m-%d").date()
+                bday_month, bday_day = map(int, emp["birthday"].split("-"))
                 
                 # Check if today is their birthday (month and day only)
-                if bday.month == today.month and bday.day == today.day:
-                    age = today.year - bday.year
-                    
+                if bday_month == today.month and bday_day == today.day:
                     # Use custom message or random template
                     if emp.get("custom_message"):
                         message_body = emp["custom_message"].format(name=emp["name"])
@@ -181,7 +179,7 @@ class BirthdayReminder:
                     # Send email
                     self.send_email(emp["email"], subject, message_body)
                     
-                    logger.info(f"🎉 Birthday greeting sent to {emp['name']} (turning {age})")
+                    logger.info(f"🎉 Birthday greeting sent to {emp['name']}")
             except Exception as e:
                 logger.error(f"Error processing {emp.get('name')}: {str(e)}")
     

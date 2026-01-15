@@ -92,18 +92,24 @@ if page == "📊 Dashboard":
         # Find birthdays this month
         this_month_birthdays = []
         for emp in st.session_state.employees:
-            bday = datetime.strptime(emp["birthday"], "%Y-%m-%d").date()
-            if bday.month == today.month:
+            bday_month, bday_day = map(int, emp["birthday"].split("-"))
+            if bday_month == today.month:
                 this_month_birthdays.append(emp)
         
         # Find upcoming birthdays (next 30 days)
         upcoming = []
         for emp in st.session_state.employees:
-            bday = datetime.strptime(emp["birthday"], "%Y-%m-%d").date()
+            bday_month, bday_day = map(int, emp["birthday"].split("-"))
             # Calculate next birthday
-            next_bday = bday.replace(year=today.year)
+            try:
+                next_bday = datetime(today.year, bday_month, bday_day).date()
+            except ValueError:
+                next_bday = datetime(today.year, bday_month, 28).date()  # Handle Feb 29
             if next_bday < today:
-                next_bday = next_bday.replace(year=today.year + 1)
+                try:
+                    next_bday = datetime(today.year + 1, bday_month, bday_day).date()
+                except ValueError:
+                    next_bday = datetime(today.year + 1, bday_month, 28).date()
             days_until = (next_bday - today).days
             if 0 <= days_until <= 30:
                 upcoming.append((emp, days_until))
@@ -121,11 +127,7 @@ if page == "📊 Dashboard":
             upcoming_sorted = sorted(upcoming, key=lambda x: x[1])
             upcoming_data = []
             for emp, days in upcoming_sorted:
-                bday = datetime.strptime(emp["birthday"], "%Y-%m-%d").date()
-                next_bday = bday.replace(year=today.year)
-                if next_bday < today:
-                    next_bday = next_bday.replace(year=today.year + 1)
-                
+                bday_month, bday_day = map(int, emp["birthday"].split("-"))
                 if days == 0:
                     status = "🔴 TODAY!"
                 elif days == 1:
@@ -138,7 +140,6 @@ if page == "📊 Dashboard":
                     "Name": emp["name"],
                     "Department": emp["department"],
                     "Birthday": emp["birthday"],
-                    "Age": datetime.now().year - datetime.strptime(emp["birthday"], "%Y-%m-%d").year
                 })
             
             df_upcoming = pd.DataFrame(upcoming_data)
@@ -173,8 +174,11 @@ elif page == "➕ Add Employee":
         emp_position = st.text_input("Position", placeholder="Manager")
     
     with col2:
-        emp_birthday = st.date_input("Date of Birth")
-        emp_phone = st.text_input("Phone Number", placeholder="+1 (555) 000-0000")
+        col2_1, col2_2 = st.columns(2)
+        with col2_1:
+            birth_month = st.selectbox("Birth Month", range(1, 13), format_func=lambda x: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"][x-1])
+        with col2_2:
+            birth_day = st.number_input("Birth Day", min_value=1, max_value=31, step=1)
         emp_custom_msg = st.text_area("Custom Birthday Message (Optional)", 
             placeholder="Leave blank for default message", height=80)
     
@@ -188,8 +192,7 @@ elif page == "➕ Add Employee":
                     "email": emp_email,
                     "department": emp_department,
                     "position": emp_position,
-                    "birthday": emp_birthday.isoformat(),
-                    "phone": emp_phone,
+                    "birthday": f"{birth_month:02d}-{birth_day:02d}",
                     "custom_message": emp_custom_msg,
                     "added_date": datetime.now().isoformat()
                 }
@@ -239,16 +242,12 @@ elif page == "📋 Manage Employees":
         # Display employees
         display_data = []
         for emp in filtered:
-            bday = datetime.strptime(emp["birthday"], "%Y-%m-%d").date()
-            age = datetime.now().year - bday.year
             display_data.append({
                 "Name": emp["name"],
                 "Email": emp["email"],
                 "Department": emp["department"],
                 "Position": emp["position"],
-                "Birthday": emp["birthday"],
-                "Age": age,
-                "Phone": emp["phone"]
+                "Birthday": emp["birthday"]
             })
         
         if display_data:
@@ -286,22 +285,26 @@ elif page == "🎁 Upcoming Birthdays":
         upcoming = []
         
         for emp in st.session_state.employees:
-            bday = datetime.strptime(emp["birthday"], "%Y-%m-%d").date()
+            bday_month, bday_day = map(int, emp["birthday"].split("-"))
             # Calculate next birthday
-            next_bday = bday.replace(year=today.year)
+            try:
+                next_bday = datetime(today.year, bday_month, bday_day).date()
+            except ValueError:
+                next_bday = datetime(today.year, bday_month, 28).date()  # Handle Feb 29
             if next_bday < today:
-                next_bday = next_bday.replace(year=today.year + 1)
+                try:
+                    next_bday = datetime(today.year + 1, bday_month, bday_day).date()
+                except ValueError:
+                    next_bday = datetime(today.year + 1, bday_month, 28).date()
             days_until = (next_bday - today).days
             
             if 0 <= days_until <= days_ahead:
-                age = next_bday.year - bday.year
                 upcoming.append({
                     "Name": emp["name"],
                     "Email": emp["email"],
                     "Department": emp["department"],
-                    "Birthday Date": str(next_bday),
+                    "Birthday Date": f"{bday_month:02d}-{bday_day:02d}",
                     "Days Until": days_until,
-                    "Will Turn": age,
                     "Custom Message": "✓" if emp.get("custom_message") else "✗"
                 })
         
