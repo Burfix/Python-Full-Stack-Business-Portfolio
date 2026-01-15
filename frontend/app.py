@@ -20,6 +20,16 @@ if uploaded_file is not None:
         st.subheader("Cheapest Suppliers")
         st.json(data["cheapest"])
 
-        st.metric("Total (1 of each item)", f"R{data['total']}")
+        col1, col2, col3 = st.columns(3)
+        col1.metric("Cheapest Total", f"R{data.get('total_cheapest', 'N/A')}")
+        col2.metric("Most Expensive Total", f"R{data.get('total_most_expensive', 'N/A')}")
+        col3.metric("Potential Savings", f"R{data.get('total_savings', 'N/A')}")
+
+        st.subheader("Savings by Item")
+        st.json(data["savings_by_item"])
+
+        st.subheader("Supplier Scoreboard")
+        st.json(data["supplier_scoreboard"])
     else:
         st.error(response.json().get("detail", "Something went wrong"))
+
