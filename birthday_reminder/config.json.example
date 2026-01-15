@@ -1,0 +1,17 @@
+{
+  "smtp": {
+    "smtp_server": "smtp.gmail.com",
+    "smtp_port": 587,
+    "sender_email": "your-email@gmail.com",
+    "sender_password": "your-app-password",
+    "from_name": "M&H Birthday Reminder"
+  },
+  "app": {
+    "port": 8508,
+    "host": "localhost"
+  },
+  "messages": {
+    "send_time": "08:00",
+    "timezone": "Africa/Johannesburg"
+  }
+}
