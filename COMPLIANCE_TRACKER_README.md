@@ -119,17 +119,15 @@ The application stores data locally in JSON format:
 ## 📊 Compliance Categories
 
 The system tracks compliance across these categories:
-1. **Fire Extraction** - Fire suppression and extraction systems
-2. **Food Safety** - Food handling and storage compliance
-3. **Liquor License** - Alcohol retail licensing
-4. **Building Safety** - Structural and safety standards
-5. **Health & Hygiene** - Sanitation and health protocols
-6. **Emergency Exits** - Emergency egress requirements
-7. **Staff Training** - Employee compliance training records
-8. **Waste Management** - Proper waste disposal procedures
-9. **Electrical Safety** - Electrical systems and safety
-10. **Pest Control** - Pest management procedures
-11. **HACCP Compliance** - Food safety hazard analysis
+1. **Fire Suppression** - Fire suppression systems compliance
+2. **Extraction** - Extract systems and ventilation
+3. **Liquor Licence** - Alcohol retail licensing
+4. **Business Licence** - Business operation license
+5. **Pest Control** - Pest management procedures
+6. **HACCP** - Food safety hazard analysis
+7. **Waste Management** - Proper waste disposal procedures
+8. **Electrical** - Electrical systems and safety
+9. **Store Front** - Store appearance and entrance compliance
 
 ## 🎯 Status Indicators
 

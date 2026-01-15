@@ -193,17 +193,15 @@ def save_data():
 
 # Compliance categories
 COMPLIANCE_CATEGORIES = [
-    "Fire Extraction",
-    "Food Safety",
-    "Liquor License",
-    "Building Safety",
-    "Health & Hygiene",
-    "Emergency Exits",
-    "Staff Training",
-    "Waste Management",
-    "Electrical Safety",
+    "Fire Suppression",
+    "Extraction",
+    "Liquor Licence",
+    "Business Licence",
     "Pest Control",
-    "HACCP Compliance"
+    "HACCP",
+    "Waste Management",
+    "Electrical",
+    "Store Front"
 ]
 
 # Load data on app start
