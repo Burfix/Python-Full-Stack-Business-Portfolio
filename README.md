@@ -1,12 +1,23 @@
 # Python Business Tools Portfolio
 
-A collection of production-focused Python applications solving real business problems.
+A collection of production-focused Python applications built to solve real business and operational problems.
+This repository serves as a personal product lab, showcasing full-stack development, automation, and data-driven tools.
 
-## Projects
+---
+
+## 📦 Projects
 
 ### 1️⃣ Supplier Pricing Intelligence Tool
-**Tech:** FastAPI, Streamlit  
-Compares supplier invoices (CSV uploads), analyzes line items, and identifies the cheapest supplier per product.
+**Tech:** FastAPI · Streamlit · Pandas  
+
+A full-stack pricing analysis platform that ingests supplier invoices (CSV), compares line-item prices, and identifies the cheapest supplier per product.
+
+**Key Features**
+- CSV invoice ingestion
+- Line-item normalization and comparison
+- Cheapest supplier identification
+- REST API built with FastAPI
+- Interactive dashboard using Streamlit
 
 📁 `supplier_pricing/`  
 🚧 Status: Active development
@@ -14,7 +25,14 @@ Compares supplier invoices (CSV uploads), analyzes line items, and identifies th
 ---
 
 ### 2️⃣ Compliance Tracker
-Tracks compliance items, deadlines, and status to reduce operational risk.
+**Tech:** Python  
+
+A lightweight compliance management tool designed to track regulatory requirements, deadlines, and completion status, helping businesses reduce operational risk.
+
+**Key Features**
+- Compliance item tracking
+- Status and deadline monitoring
+- Extensible for notifications and reporting
 
 📁 `compliance_tracker/`  
 🚧 Status: Prototype
@@ -22,19 +40,43 @@ Tracks compliance items, deadlines, and status to reduce operational risk.
 ---
 
 ### 3️⃣ Birthday Reminder / Tracker
-A lightweight automation tool for tracking birthdays and sending reminders.
+**Tech:** Python  
+
+A simple automation utility for managing birthdays and generating reminders, built as a focused standalone Python project.
+
+**Key Features**
+- Birthday storage and lookup
+- Reminder logic
+- Clean, minimal implementation
 
 📁 `birthday_tracker/`  
 ✅ Status: Complete
 
 ---
 
-## Tech Stack
+## 🛠 Tech Stack
 - Python
 - FastAPI
 - Streamlit
 - Pandas
 - REST APIs
 
-## Goal
-Build practical, production-ready tools with clean architecture and real-world use cases.
+---
+
+## 🎯 Purpose of This Repository
+- Build **real, business-driven tools**
+- Demonstrate **clean architecture and full-stack thinking**
+- Serve as a foundation for standalone products and future expansion
+
+---
+
+## 🚀 Roadmap
+- Extract Supplier Pricing Tool into a standalone repo
+- Add authentication and persistence layers
+- Improve analytics and reporting features
+- Deploy live demos
+
+---
+
+## 📄 License
+MIT License
