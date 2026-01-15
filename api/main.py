@@ -1,4 +1,5 @@
 from fastapi import FastAPI, HTTPException
+from fastapi import UploadFile, File
 from pydantic import BaseModel
 import csv
 import io
@@ -25,7 +26,7 @@ def compute_cheapest(csv_text: str) -> dict:
 
     cheapest = {}
     for row in reader:
-        item = row["item"].strip()
+        item = row["item"].strip().lower()
         supplier = row["supplier"].strip()
         price = float(row["price"])
 
@@ -40,6 +41,18 @@ def compute_cheapest(csv_text: str) -> dict:
 def cheapest(payload: CSVPayload):
     try:
         return compute_cheapest(payload.csv_text)
+    except KeyError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+    except ValueError:
+        raise HTTPException(status_code=400, detail="Price must be numeric")
+@app.post("/upload")
+async def upload(file: UploadFile = File(...)):
+    try:
+        content = await file.read()
+        csv_text = content.decode("utf-8")
+        return compute_cheapest(csv_text)
+    except UnicodeDecodeError:
+        raise HTTPException(status_code=400, detail="File must be a UTF-8 CSV")
     except KeyError as e:
         raise HTTPException(status_code=400, detail=str(e))
     except ValueError:
