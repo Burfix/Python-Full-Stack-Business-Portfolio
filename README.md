@@ -1,6 +1,6 @@
 # FSP Python Journey - Project Portfolio
 
-A collection of professional Python projects built during the Full Stack Python journey.
+A collection of professional Python projects built during the Full Stack Python journey. This repository serves as a personal product lab, showcasing full-stack development, automation, and data-driven tools.
 
 ## 📁 Project Structure
 
@@ -17,10 +17,12 @@ Automated birthday reminder system for M&H Company employees (~100 employees).
 
 **Run:** `streamlit run birthday_reminder/app/streamlit_app.py` (Port: 8508)
 
+**Status:** ✅ Production Ready
+
 ---
 
 ### 2. ✅ [Compliance Tracker](./compliance_tracker)
-Professional compliance management system for Waterfront Mall retail stores.
+Professional compliance management system for Waterfront Mall retail stores. A lightweight compliance management tool designed to track regulatory requirements, deadlines, and completion status.
 
 **Features:**
 - Store management (CRUD operations)
@@ -33,20 +35,26 @@ Professional compliance management system for Waterfront Mall retail stores.
 
 **Run:** `streamlit run compliance_tracker/compliance_tracker.py` (Port: 8506)
 
+**Status:** ✅ Production Ready
+
 ---
 
-### 3. � [Supplier Pricing Intelligence Tool](./supplier_pricing_intelligence_tool)
-Advanced supplier pricing analysis and invoice parsing system.
+### 3. 📊 [Supplier Pricing Intelligence Tool](./supplier_pricing_intelligence_tool)
+Advanced supplier pricing analysis and invoice parsing system. A full-stack pricing analysis platform that ingests supplier invoices (CSV), compares line-item prices, and identifies the cheapest supplier per product.
 
 **Features:**
 - Parse supplier invoice and pricing data from CSV files
+- Line-item normalization and comparison
+- Cheapest supplier identification
 - Multiple format support
 - Data validation and analysis
 - Price insights and reporting
 
-**Tech Stack:** Pandas
+**Tech Stack:** Python, Pandas, FastAPI (optional)
 
 **Run:** `python supplier_pricing_intelligence_tool/invoice_parser_v2.py`
+
+**Status:** ✅ Complete
 
 ---
 
@@ -87,6 +95,23 @@ pip install -r supplier_pricing_intelligence_tool/requirements.txt
 
 ---
 
+## 🛠 Tech Stack
+- Python 3.8+
+- Streamlit (Web UI)
+- Pandas (Data processing)
+- APScheduler (Background jobs)
+- FastAPI (API framework - optional)
+
+---
+
+## 🎯 Purpose of This Repository
+- Build **real, business-driven tools**
+- Demonstrate **clean architecture and full-stack thinking**
+- Serve as a foundation for standalone products and future expansion
+- Showcase professional Python development practices
+
+---
+
 ## 📝 Git Commits
 
 All projects are version controlled. View commit history:
@@ -99,6 +124,20 @@ git log --oneline
 ## 🤝 Contributing
 
 Each project has its own documentation. Refer to individual README files for detailed setup and usage instructions.
+
+---
+
+## 🚀 Roadmap
+- Extract projects into standalone repos as they mature
+- Add authentication and persistence layers (PostgreSQL)
+- Improve analytics and reporting features
+- Deploy live demos to cloud platforms
+- Add automated testing and CI/CD pipelines
+
+---
+
+## 📄 License
+MIT License
 
 ---
 
