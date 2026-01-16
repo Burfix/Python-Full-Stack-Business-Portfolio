@@ -261,7 +261,6 @@ make check
 
 ## 🤝 How to Use This Portfolio
 
-### For Hiring Managers
 - **5-minute scan:** Read this README and check out app descriptions
 - **15-minute deep dive:** Install and run `make run-birthday` to see a full Streamlit app
 - **30-minute review:** Explore code in each `/apps/*/` folder to understand architecture
