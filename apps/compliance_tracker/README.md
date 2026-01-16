@@ -1,10 +1,10 @@
 # Compliance Tracker Project
 
-Professional compliance management system for Waterfront Mall retail stores.
+Professional compliance management system for retail operations.
 
 ## Files
 - `compliance_tracker.py` - Main Streamlit application
-- `logo.png` - Waterfront Cape Town branding asset
+- `logo.png` - Custom branding asset
 - `compliance_records.json` - Compliance records database
 - `data.json` - Store information database
 - `COMPLIANCE_TRACKER_README.md` - Detailed documentation

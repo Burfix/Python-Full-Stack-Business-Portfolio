@@ -1,6 +1,6 @@
-# 🎂 M&H Birthday Reminder System
+# 🎂 Employee Birthday Reminder System
 
-A comprehensive birthday management and automated greeting system for M&H Company. Manage up to 100+ employees' birthdays and automatically send personalized birthday greetings every morning at 8 AM.
+A comprehensive birthday management and automated greeting system. Manage up to 100+ employees' birthdays and automatically send personalized birthday greetings every morning at 8 AM.
 
 ## 🎯 Features
 
@@ -302,7 +302,7 @@ For issues or questions:
 
 ## 📄 License
 
-This project is created for M&H Company internal use.
+This project is designed for team-wide internal use.
 
 ## 🎉 Acknowledgments
 
