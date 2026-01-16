@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "name": "Si Cantina ",
+    "category": "Restaurant",
+    "location": "Silo",
+    "manager": "Thami",
+    "phone": "12345",
+    "added_date": "2026-01-15T13:39:43.613876"
+  },
+  {
+    "id": 2,
+    "name": "Store 4 ",
+    "category": "Fast Food",
+    "location": "Mall 1",
+    "manager": "test2",
+    "phone": "1223",
+    "added_date": "2026-01-15T14:08:59.102103"
+  },
+  {
+    "id": 3,
+    "name": "kitchen s",
+    "category": "Retail",
+    "location": "silo 5",
+    "manager": "josh",
+    "phone": "1232425",
+    "added_date": "2026-01-15T14:12:38.476363"
+  }
+]

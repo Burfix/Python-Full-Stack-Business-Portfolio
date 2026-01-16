@@ -1,0 +1,90 @@
+[
+  {
+    "id": 1,
+    "store_id": 1,
+    "category": "Fire Extraction",
+    "status": "Passed",
+    "date": "2026-01-15",
+    "next_review": "2026-04-15",
+    "inspector": "Mario",
+    "notes": "test",
+    "logged_at": "2026-01-15T13:40:29.417942"
+  },
+  {
+    "id": 2,
+    "store_id": 1,
+    "category": "Fire Extraction",
+    "status": "Needs Review",
+    "date": "2026-01-15",
+    "next_review": "2026-04-15",
+    "inspector": "xxxx",
+    "notes": "needs attention",
+    "logged_at": "2026-01-15T14:09:59.536508"
+  },
+  {
+    "id": 3,
+    "store_id": 1,
+    "category": "Fire Extraction",
+    "status": "Needs Review",
+    "date": "2026-01-15",
+    "next_review": "2026-04-15",
+    "inspector": "xxxx",
+    "notes": "needs attention",
+    "logged_at": "2026-01-15T14:10:02.772205"
+  },
+  {
+    "id": 4,
+    "store_id": 1,
+    "category": "Fire Extraction",
+    "status": "Needs Review",
+    "date": "2026-01-15",
+    "next_review": "2026-04-15",
+    "inspector": "xxxx",
+    "notes": "needs attention",
+    "logged_at": "2026-01-15T14:10:09.522558"
+  },
+  {
+    "id": 5,
+    "store_id": 1,
+    "category": "Fire Extraction",
+    "status": "Not Applicable",
+    "date": "2026-01-15",
+    "next_review": "2026-04-15",
+    "inspector": "bongani",
+    "notes": "",
+    "logged_at": "2026-01-15T14:12:58.130611"
+  },
+  {
+    "id": 6,
+    "store_id": 2,
+    "category": "Waste Management",
+    "status": "Passed",
+    "date": "2026-01-15",
+    "next_review": "2026-07-24",
+    "inspector": "thajs",
+    "notes": "",
+    "logged_at": "2026-01-15T15:27:53.583681"
+  },
+  {
+    "id": 7,
+    "store_id": 3,
+    "category": "Liquor Licence",
+    "status": "Failed",
+    "date": "2026-01-15",
+    "next_review": "2026-04-15",
+    "inspector": "Thajsk",
+    "notes": "not done",
+    "logged_at": "2026-01-15T15:54:44.322885"
+  },
+  {
+    "id": 8,
+    "store_id": 1,
+    "category": "Extraction",
+    "status": "Passed",
+    "date": "2026-01-15",
+    "next_review": "2026-01-30",
+    "inspector": "thamsu",
+    "notes": "",
+    "logged_at": "2026-01-15T15:55:39.553418"
+  }
+]
