@@ -1,4 +1,11 @@
 import os
+import sys
+
+# Ensure data directory exists for Streamlit Cloud
+DATA_DIR = "/tmp/compliance_data"
+os.makedirs(DATA_DIR, exist_ok=True)
+
+import os
 import pandas as pd
 import json
 from datetime import datetime, timedelta
